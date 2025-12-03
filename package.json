@@ -1,0 +1,24 @@
+{
+  "name": "eecs677-p4-manual",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm start",
+    "install:all": "cd backend && npm install && cd ../frontend && npm install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coffman686/EECS677-p4-manual.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/coffman686/EECS677-p4-manual/issues"
+  },
+  "homepage": "https://github.com/coffman686/EECS677-p4-manual#readme"
+}
