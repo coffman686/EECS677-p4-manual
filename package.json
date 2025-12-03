@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/coffman686/EECS677-p4-manual/issues"
   },
-  "homepage": "https://github.com/coffman686/EECS677-p4-manual#readme"
+  "homepage": "https://github.com/coffman686/EECS677-p4-manual#readme",
+  "dependencies": {
+    "react-router-dom": "^7.10.0"
+  }
 }
