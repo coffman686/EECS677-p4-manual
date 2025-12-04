@@ -2,14 +2,14 @@
 
 import { useState } from 'react'; // hook to manage component state
 import { Link, useNavigate } from 'react-router-dom'; // hook to navigate after sucessful login
-//import { useAuth } from '../context/AuthContext'; // TO DO: hook to access auth functions
+import { useAuth } from '../context/AuthContext'; // hook to access auth functions
 
 function Login() {
   const [username, setUsername] = useState(''); // empty username input state
   const [password, setPassword] = useState(''); // empty password input state
   const [error, setError] = useState(''); // initially no error, display error if login fails
 
-  //const { login } = useAuth(); // TO DO: get login function from AuthContext
+  const { login } = useAuth(); // get login function from AuthContext
   const navigate = useNavigate(); // navigate function to redirect after login
 
 
@@ -19,7 +19,7 @@ function Login() {
     setError(''); // reset error state
 
     try { // try to login
-      //await login(username, password); // TO DO: call login function from AuthContext
+      await login(username, password); // call login function from AuthContext
       navigate('/dashboard'); // if successful, redirect to dashboard
 
     } catch (err) { // if login fails

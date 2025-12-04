@@ -1,7 +1,7 @@
 
 import { useState } from 'react'; 
 import { Link, useNavigate } from 'react-router-dom';
-//import { useAuth } from '../context/AuthContext'; TO DO: import useAuth hook
+import { useAuth } from '../context/AuthContext'; // import useAuth hook
 
 
 function Register() { // register page
@@ -11,7 +11,7 @@ function Register() { // register page
 
   const [error, setError] = useState('');
 
-  //const { register } = useAuth(); TO DO: get register function from AuthContext
+  const { register } = useAuth(); // get register function from AuthContext
 
   const navigate = useNavigate(); // redirect function
 
@@ -30,7 +30,7 @@ function Register() { // register page
     }
 
     try { // try to register
-      // await register(username, password); // TO DO: call register function from AuthContext
+      await register(username, password); // call register function from AuthContext
 
       navigate('/login');
     } catch (err) { // handle registration errors
