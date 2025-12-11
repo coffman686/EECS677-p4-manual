@@ -6,10 +6,12 @@ const cors = require('cors'); // import cors module to handle Cross-Origin Resou
 const rateLimit = require('express-rate-limit'); // import rate limiting middleware to prevent abuse
 
 const authRoutes = require('./routes/auth'); // import authentication routes
-//onst articleRoutes = require('./routes/articles'); TODO: add article routes later
+const articleRoutes = require('./routes/articles'); // import article routes
 
 const app = express(); // create express app instance
 const PORT = process.env.PORT || 3001; // use env var PORT if available, else default to 3001
+
+app.set('trust proxy', 1); // trust first proxy (needed for rate limiting behind React dev server proxy)
 
 app.use(helmet()); // security middleware to set various HTTP headers for protection
 
@@ -27,7 +29,7 @@ app.use(limiter); //apply rate limiting to all requests
 
 app.use('/api/auth', authRoutes); // mount auth routes at /api/auth
 
-// app.use('/api/articles', articleRoutes); TODO: add article routes later
+app.use('/api/articles', articleRoutes); // mount article routes at /api/articles
 
 // health check endpoint to check server status
 app.get('/api/health', (req, res) => {
