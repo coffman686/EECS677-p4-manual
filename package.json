@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev:backend": "cd backend && npm run dev",
     "dev:frontend": "cd frontend && npm start",
-    "install:all": "cd backend && npm install && cd ../frontend && npm install"
+    "install:all": "cd backend && npm install && cd ../frontend && npm install",
+    "init:db": "cd backend && node initDb.js"
   },
   "repository": {
     "type": "git",
@@ -20,8 +20,5 @@
   "bugs": {
     "url": "https://github.com/coffman686/EECS677-p4-manual/issues"
   },
-  "homepage": "https://github.com/coffman686/EECS677-p4-manual#readme",
-  "dependencies": {
-    "react-router-dom": "^7.10.0"
-  }
+  "homepage": "https://github.com/coffman686/EECS677-p4-manual#readme"
 }
