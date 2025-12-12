@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "dev:backend": "cd backend && npm run dev",
-    "dev:frontend": "cd frontend && npm start",
-    "install:all": "cd backend && npm install && cd ../frontend && npm install",
-    "init:db": "cd backend && node initDb.js"
-  },
+"scripts": {
+  "dev:backend": "npm --prefix backend run dev",
+  "dev:frontend": "npm --prefix frontend start",
+  "install:all": "npm --prefix backend install && npm --prefix frontend install",
+  "init:db": "node backend/initDb.js"
+},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/coffman686/EECS677-p4-manual.git"
